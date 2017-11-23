@@ -70,8 +70,8 @@ class TestFriends < MiniTest::Test
     assert_equal("Dave", result)
   end
 
-  # 2. For a given person, return their favourite tv show
-  # (e.g. for @person2, function should return the string "Baywatch")
+  2. For a given person, return their favourite tv show
+  (e.g. for @person2, function should return the string "Baywatch")
   def test_get_favourite_tv_show
     result = get_favourite_tv_show(@person1)
     assert_equal("Friends", result)
@@ -79,7 +79,14 @@ class TestFriends < MiniTest::Test
 
   # 3. For a given person, check if they like a particular food
   # (e.g. function should return true for @person3 when checked for "stew", false for "spinach")
-
+  def test_check_particular_food_true
+    result = check_particular_food?(@person2, "soup")
+    assert_equal(true, result)
+  end
+  def test_check_particular_food_false
+    result = check_particular_food?(@person2, "stew")
+    assert_equal(false, result)
+  end
 
   # 4. For a given person, add a new name to their list of friends
   # (hint: Add a new string to the friends array, then test for the length of the array, not the return value of your add_friend method)
